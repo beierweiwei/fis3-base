@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta content="width=device-width,initial-scale=1.0" name="viewport"/>
+    <meta content="telephone=no" name="format-detection"/>
+    <meta content="address=no" name="format-detection"/>
+    <title>fis3 base</title>
+    <!--此处用index.scss不会生效，建议不要使用index作为文件名-->
+    <link rel="stylesheet" href="./home.scss">
+    <script src="lib/mod.js"></script>
+    <!--STYLE_PLACEHOLDER-->
+</head>
+<body>
+    <div class="container">
+        <link rel="import" href="/common/widgets/header/header.html?__inline">
+        <div class="body">
+            <div id="main"></div>
+        </div>
+        <link rel="import" href="/common/widgets/footer/footer.html?__inline">
+    </div>
+     
+    <!--SCRIPT_PLACEHOLDER-->
+        <script type="text/javascript">
+        var $ = require('jquery');
+        var echarts = require('/mods/echarts.js');
+        // 基于准备好的dom，初始化echarts实例
+        var myChart = echarts.init(document.getElementById('main'));
+        // 绘制图表
+        myChart.setOption({
+          title: {
+            text: 'ECharts 入门示例'
+          },
+          tooltip: {},
+          xAxis: {
+            data: ['衬衫', '羊毛衫', '雪纺衫', '裤子', '高跟鞋', '袜子']
+          },
+          yAxis: {},
+          series: [{
+            name: '销量',
+            type: 'bar',
+            data: [5, 20, 36, 10, 10, 20]
+          }]
+        });
+
+    </script>
+</body>
+</html>

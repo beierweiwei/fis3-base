@@ -1,27 +1,23 @@
-##目录规范
-     页面为基础
-传统jquery开发方式组件化其实只是单纯的将页面分割。
-组件代码只是简单的嵌入。
+纯前端传统开发模式脚手架。
 
 ##模块依赖
 未模块化的插件
 已模块化的插件
-模块加载器
+node_modules模块都可以很好的兼容
 
 ## 目录规范
-lib(第三公共方库，每个页面需要使用，所以文件会打包成单一lib.js)
-
-mods(第三方库，通过fis包装成commonJs模块化js)，按需加载
-
+lib(第三公共方库，非模块化。每个页面需要使用，所以文件会打包成单一lib.js)
 common
+   style
    widget(公共组件，上线时会被打包成widget.js, widget.css ....)
        header 
        footer
-       header2
+       scrollBar
     css(公共样式库，工具)
       index.scss(html文件引用，最终会被打包成common.css)
       util.scss(scss工具库，开发时每个scss文件引用)
-    images(上线打包到/static/images/common...)
+    images
+    icon
 pages(同名依赖，js，css)
   home
   user 

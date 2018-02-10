@@ -2,11 +2,8 @@
 fis.set('project.name', 'reportcharts');
 fis.set('project.static', '/static');
 fis.set('project.files', ['*.html', 'map.json', '/test/*', '/lib/**']);
-fis.log.level = fis.L_NORMAL;
-
 
 // 引入模块化开发插件，设置规范为 commonJs 规范。
-
 fis.hook('commonjs', {
     // baseUrl: './modules',
      extList: ['.js', '.jsx', '.es', '.ts', '.tsx']
@@ -19,27 +16,26 @@ fis.match('*', {
 
 //js文件
 fis.match('**.{js,es}',{
-  release: '/${project.static}/js/$0',
+  release: '/${project.static}/js/$0'
 })
 
 //css、scss
 fis.match('**.{scss, css}',{
   useSprite: true,
-  release: '/${project.static}/style/$0',
+  release: '/${project.static}/css/$0'
 })
-
-//images
-fis.match('**.{png, jpg, gif}', {
-  release: '/${project.static}/images/$0)'
-})
-fis.match('/common/images(**.{png,jpg,gif})', {
-  release: '/${project.static}/images/$1$2$3'
-})
-
 
 /*************************目录规范*****************************/
 
-// 所有模板放到 tempalte 目录下
+//common
+fis.match('/common/style/(**)', {
+  release: '/${project.static}/css/$1'
+})
+
+
+fis.match('/common/images/(**)', {
+  release: '/${project.static}/images/$1'
+})
 
 //widgets
 fis.match('/common/widgets/**', {
@@ -93,7 +89,7 @@ fis.match('/node_modules/(**.js)', {
 fis.match('/node_modules/(**.{css,scss})', {
   isMod: true,
   useSameNameRequire: true,
-  release: '/${project.static}/style/mods/$1',
+  release: '/${project.static}/css/mods/$1',
 });
 
 // test 目录直接产出出到 test 目录下
@@ -110,9 +106,8 @@ fis.match('_*', {
 //模块化开发
 // 禁用components，结合mod.js 兼容npm安装的库
 //https://github.com/fex-team/fis3-hook-node_modules/issues
-fis.unhook('components')
-fis.hook('node_modules')
-// 开启同名依赖
+fis.unhook('components');
+fis.hook('node_modules');
 
 // ------ 全局配置
 // 允许你在 js 中直接 require css+文件
@@ -132,12 +127,10 @@ fis.match('**.png', {
     })
 });
 
-
-
 // 配置css
 fis.match('*.scss', {
     parser: fis.plugin('node-sass', {
-        // include_paths: ['modules/css', 'components'] // 加入文件查找目录
+        // include_paths: ['modules/style', 'components'] // 加入文件查找目录
     })
 });
 // fis.match(/^\/modules\/(.*\.less)$/i, {
@@ -150,8 +143,8 @@ fis.match(/^\/(.*\.(scss|less|css))$/i, {
     // isMod: true,
     // release: '${project.static}/$1',
     postprocessor: fis.plugin('autoprefixer', {
-        browsers: ['IE >= 8', 'Chrome >= 30', 'last 2 versions'] // pc
-            // browsers: ['Android >= 4', 'ChromeAndroid > 1%', 'iOS >= 6'] // wap
+        //browsers: ['IE >= 8', 'Chrome >= 30', 'last 2 versions'] // pc
+        browsers: ['Android >= 4', 'ChromeAndroid > 1%', 'iOS >= 6'] // wap
     })
 });
 
@@ -175,7 +168,7 @@ fis.match('/pages/**.{js, es}', {
 fis.match('/common/widgets/**.{js, es}', {
   parser: fis.plugin('babel-5.x'),
   rExt: 'js',
-  isMod: true,
+  isMod: false,
 });
 
 
@@ -240,7 +233,7 @@ var map = {
         path: ''
     },
     'prod': {
-        host: 'http://shop.zallds.com',
+        host: '',
         // path: '/${project.name}'
         //path: '/'
     },
@@ -286,7 +279,7 @@ Object.keys(map).forEach(function(v) {
         })
         /*打包分为3个层：
          * 插件: /lib/**.js => lib.js   /lib/**.css => lib.css  /lib/**.jpg => common/lib/**.jpg
-         * 公共逻辑: /common/js/**.js => common.js  /common/css/**.css => common.css
+         * 公共逻辑: /common/js/**.js => common.js  /common/style/**.css => common.css
          * 公共组件：/common/widgets/**.js,css => widgets.js,css
          * 页面单独逻辑js,css
          *
@@ -350,39 +343,26 @@ fis.media('prod')
 ['rd', 'rd-debug'].forEach(function(v) {
     fis.media(v)
         .match('*', {
-            // deploy: [
-            //     fis.plugin('skip-packed', {
-            //         // 默认被打包了 js 和 css 以及被 css sprite 合并了的图片都会在这过滤掉，
-            //         // 但是如果这些文件满足下面的规则，则依然不过滤
-            //         ignore: []
-            //     }),
-            //     // fis.plugin('http-push', {
-            //     //     receiver: '127.0.0.1:8080',
-            //     //     to: '/' + fis.get('project.name'),
-            //     // })
-            //     fis.plugin('ftp', {
-            //       console: true,
-            //       // cache: true,           // 是否开启上传列表缓存，开启后支持跳过未修改文件，默认：true
-            //       remoteDir: '/data/www/zallpay_html5_mall/',   // 远程文件目录，注意！！！设置错误将导致文件被覆盖
-            //       // remoteDir: '/data/www/zallpay_html5_mall/' + fis.get('project.name'),   // 远程文件目录，注意！！！设置错误将导致文件被覆盖
-            //       connect: {
-            //         host: '192.168.62.51',
-            //         port: '22',
-            //         user: 'zallds',
-            //         password: 'zAllds@123'
-            //       }
-            //     })
-            // ]
-            deploy: fis.plugin('sftp-client', {
-              // cache: true,           // 是否开启上传列表缓存，开启后支持跳过未修改文件，默认：true
-              // to: '/data/www/zallpay_html5_mall/',   // 远程文件目录，注意！！！设置错误将导致文件被覆盖
-              from: ['/'],
-              to: ['/data/www/zallpay_html5_mall/'],   // 远程文件目录，注意！！！设置错误将导致文件被覆盖
-              host: '192.168.62.51',
-              // port: '22',
-              username: 'zallds',
-              password: 'zAllds@123'
-            })
+            deploy: [
+                fis.plugin('skip-packed', {
+                    // 默认被打包了 js 和 css 以及被 css sprite 合并了的图片都会在这过滤掉，
+                    // 但是如果这些文件满足下面的规则，则依然不过滤
+                    ignore: []
+                }),
+                // fis.plugin('http-push', {
+                //     receiver: '127.0.0.1:8080',
+                //     to: '/' + fis.get('project.name'),
+                // })
+                fis.plugin('sftp-client', {
+                from: ['/'],
+                to: ['xxxx/'],   // 远程文件目录，注意！！！设置错误将导致文件被覆盖
+                host: 'xxxx',
+                // port: '22',
+                username: 'xxxx',
+                password: 'xxx'
+              })
+            ]
+
 
         });
 });

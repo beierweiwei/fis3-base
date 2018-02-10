@@ -1,48 +1,87 @@
 <!DOCTYPE html>
-<html lang="zh-CN">
+<html lang="zh-CN" >
+<script>
+
+</script>
 <head>
+
     <meta charset="UTF-8">
-    <meta content="width=device-width,initial-scale=1.0" name="viewport"/>
+    <meta content="width=device-width,user-scalable=no,initial-scale=1,maximum-scale=1,minimum-scale=1" name="viewport"/>
     <meta content="telephone=no" name="format-detection"/>
     <meta content="address=no" name="format-detection"/>
-    <title>fis3 base</title>
+    <title>智能分析</title>
     <!--此处用index.scss不会生效，建议不要使用index作为文件名-->
-    <link rel="stylesheet" href="./home.scss">
-    <script src="lib/mod.js"></script>
+    <!--@require "/common/css/index.scss"-->
+    <!--@require /lib-->
     <!--STYLE_PLACEHOLDER-->
 </head>
 <body>
     <div class="container">
+        <div id="custom-overlay" class="loading-shown">
+            <div class="loading-spinner">
+            </div>
+        </div>
         <link rel="import" href="/common/widgets/header/header.html?__inline">
         <div class="body">
-            <div id="main"></div>
-        </div>
-        <link rel="import" href="/common/widgets/footer/footer.html?__inline">
-    </div>
-     
-    <!--SCRIPT_PLACEHOLDER-->
-        <script type="text/javascript">
-        var $ = require('jquery');
-        var echarts = require('/mods/echarts.js');
-        // 基于准备好的dom，初始化echarts实例
-        var myChart = echarts.init(document.getElementById('main'));
-        // 绘制图表
-        myChart.setOption({
-          title: {
-            text: 'ECharts 入门示例'
-          },
-          tooltip: {},
-          xAxis: {
-            data: ['衬衫', '羊毛衫', '雪纺衫', '裤子', '高跟鞋', '袜子']
-          },
-          yAxis: {},
-          series: [{
-            name: '销量',
-            type: 'bar',
-            data: [5, 20, 36, 10, 10, 20]
-          }]
-        });
+            <div class="report-hader">
+                <div class="pure-menu pure-menu-horizontal report-tabs">
+                    <ul class="pure-menu-list">
+                        <li class="pure-menu-item"><a href="#" class="pure-menu-link"  data-length="7">7天</a></li>
+                        <li class="pure-menu-item"><a href="#" class="pure-menu-link" data-length="15">15天</a></li>
+                        <li class="pure-menu-item"><a href="#" class="pure-menu-link" data-length="30">30天</a></li>
+                        <li class="pure-menu-item"><a href="#" class="pure-menu-link" data-length="custom">其他</a></li>
+                    </ul>
+                    <ul class="report-data-select">
+                        <li >
+                            <input class="data-select-input" id="dataStart" readonly type="text" placeholder="开始时间" required>
+                            <span class="icon-canlendar"></span>
+                        </li>
+                        <li>
+                            <input class="data-select-input" id="dataEnd" readonly type="text" placeholder="结束时间">
+                            <span class="icon-canlendar"></span>
+                        </li>
+                        <li>
+                            <div class="pure-button report-search-btn" >查询</div>
+                        </li>
 
+                    </ul>
+                </div>
+                <div class="report-count">
+                    <div class="count-card  primary-card">
+                        <span>实收总金额</span> <br>
+                        <span class="count-num">243,187.00</span>
+                    </div>
+                    <div class="count-card-gap"></div>
+                    <div class="count-card  warn-card">
+                        <span>总笔数</span><br>
+                        <span class="count-num">123</span>
+                    </div>
+                </div>
+            </div>
+            <div id="report-scroll">
+                <div id="report-main"></div>
+            </div>
+             <div class="report-table-wrap">
+                 <table class="pure-table pure-table-striped report-table">
+                     <thead>
+                     <tr>
+                         <th>日期</th>
+                         <th>总笔数</th>
+                         <th>实收总金额</th>
+                     </tr>
+                     </thead>
+                     <tbody>
+
+                     </tbody>
+                 </table>
+             </div>
+            <link rel="import" href="/common/widgets/scrollBtn/scrollBtn.html?__inline">
+        </div>
+        <!--<link rel="import" href="/common/widgets/footer/footer.html?__inline">-->
+    </div>
+    <!--@require "home.scss"-->
+    <script>
+      require('./home.js');
     </script>
 </body>
 </html>

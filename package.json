@@ -29,8 +29,14 @@
   },
   "homepage": "https://github.com/yanhaijing/fis3-base",
   "dependencies": {
-    "echarts": "^4.0.2",
     "jquery": "^3.3.1",
-    "process": "^0.11.10"
+    "normalize.css": "^7.0.0",
+    "process": "^0.11.10",
+    "purecss": "^1.0.0",
+    "zepto": "^1.2.0"
+  },
+  "devDependencies": {
+    "fis3-deploy-sftp": "^1.0.1",
+    "fis3-postprocessor-px2rem": "0.0.1"
   }
 }

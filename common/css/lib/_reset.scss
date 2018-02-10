@@ -1,0 +1,148 @@
+@charset "utf-8";
+@import "../base/_fn";
+
+html {
+  -ms-text-size-adjust: 100%;
+  -webkit-text-size-adjust: 100%;
+}
+
+
+/*通过给html和body设置height: 100%，即可默认使得html标签和body标签占满屏幕，实现满屏效果*/
+html,
+body {
+  height:100%;
+  width: 100%;
+  -webkit-text-size-adjust: 100%;
+  overflow-x: hidden;
+  -webkit-overflow-scrolling: touch;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/*移动端除IE7,IE8不支持box-sizing属性外，其他浏览器全部支持(部分机型需加前缀)*/
+/*取消所有元素默认的margin和padding，使得浏览器表现统一*/
+html * {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  -webkit-tap-highlight-color:rgba(0,0,0,0);
+}
+
+
+body {
+  line-height: 1.6;
+  font-family: $weuiFontDefault;
+  color:$color6;
+}
+
+/*字体：*/
+/*字体不使用margin扩大边距，而使用line-height进行扩大边距*/
+h1, h2, h3, h4, h5, h6 {
+  font-weight: normal;
+  line-height: 1.5;
+}
+h1 {font-size: 2rem;}
+h2 {font-size: 1.8rem;}
+h3 {font-size: 1.6rem;}
+h4 {font-size: 1.4rem;}
+h5 {font-size: 1.2rem;}
+h6 {font-size: px2rem(28);}
+
+/*span,p {
+  font-weight: normal;
+  white-space: pre-line;
+}*/
+
+/*列表*/
+/*去除列表li元素前的标示符*/
+ul, ol {
+  list-style: none;
+}
+
+/*表格*/
+/*去除表格之间默认的距离*/
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+a:active {
+  outline: 0;
+}
+
+input,
+textarea,
+select {
+  outline: 0;
+}
+
+del {
+  text-decoration: line-through;
+}
+
+img {
+  max-width: 100%;
+}
+
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none !important;
+  margin: 0;
+}
+
+
+a,button,input {
+  text-decoration: none;
+  @include setTapColor();
+}
+
+.fl{ float: left;}
+.fr{ float: right;}
+
+i,em{ font-style: normal;}
+
+#app, .page{
+  /*height:100%;
+  font-size:px2rem(14);
+  position: relative;
+  background:$colorBg;*/
+}
+
+#app{
+  height:100%;
+  font-size:px2rem(14);
+}
+
+.page{
+  min-height:100%;
+  background:$colorBg;
+}
+
+
+.fixed-page{
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: #f6f6f8;
+  z-index: 202;
+}
+
+.page.demo{
+  background:rgb(250,250,250);
+  .demo-title{
+    color: #888;
+    display: block;
+    font-size: 12px;
+    margin-top:px2rem(20);
+  }
+}
+
+
+

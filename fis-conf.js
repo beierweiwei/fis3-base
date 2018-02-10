@@ -1,7 +1,9 @@
 // 设置项目属性
-fis.set('project.name', 'fis3-base');
+fis.set('project.name', 'reportcharts');
 fis.set('project.static', '/static');
-fis.set('project.files', ['*.html', 'map.json', '/test/*']);
+fis.set('project.files', ['*.html', 'map.json', '/test/*', '/lib/**']);
+fis.log.level = fis.L_NORMAL;
+
 
 // 引入模块化开发插件，设置规范为 commonJs 规范。
 
@@ -10,24 +12,45 @@ fis.hook('commonjs', {
      extList: ['.js', '.jsx', '.es', '.ts', '.tsx']
 });
 
-/*************************目录规范*****************************/
-//npm模块管理
-fis.match('/node_modules/**.js', {
-    isMod: true,
-    useSameNameRequire: true
-});
-
-
+/*************************文件处理*****************************/
 fis.match('*', {
-    release: '${project.static}/$0'
+  release: '${project.static}/$0'
 });
+
+//js文件
+fis.match('**.{js,es}',{
+  release: '/${project.static}/js/$0',
+})
+
+//css、scss
+fis.match('**.{scss, css}',{
+  useSprite: true,
+  release: '/${project.static}/style/$0',
+})
+
+//images
+fis.match('**.{png, jpg, gif}', {
+  release: '/${project.static}/images/$0)'
+})
+fis.match('/common/images(**.{png,jpg,gif})', {
+  release: '/${project.static}/images/$1$2$3'
+})
+
+
+/*************************目录规范*****************************/
 
 // 所有模板放到 tempalte 目录下
-fis.match('**.html', {
-    release: '/template/$0'
+
+//widgets
+fis.match('/common/widgets/**', {
+  useSameNameRequire: true
+});
+fis.match('widgets/**.html', {
+    release: false
 });
 
-//page页面放到项目顶层
+//page页面
+
 fis.match('/pages/(*.html)', {
     release:'/$1'
 });
@@ -35,21 +58,47 @@ fis.match('/pages/(*.html)', {
 fis.match('/pages/**/(*.html)', {
     release:'/$1',
 });
+
+fis.match('/pages/**.js', {
+  isMod: true,
+})
+//page
+fis.match('/pages/**', {
+  useSameNameRequire: true
+});
+
+
 //mods源码目录下是需要包装的js组件
 fis.match('/mods/**', {
     isMod: true,
     useSameNameRequire: true
 });
 
-fis.match('**.{scss, css}',{
-    release: '/${project.static}/style/$0',
+//lib目录直接产出到static/lib
+fis.match('/lib/**', {
+  release: '/${project.static}/$0'
 })
-fis.match('**.{js, es}',{
-    release: '/${project.static}/js/$0',
+
+fis.match('/lib/layer/need/layer.css', {
+  release: '/${project.static}/js/need/layer.css'
 })
+
+//npm模块管理
+fis.match('/node_modules/(**.js)', {
+  isMod: true,
+  useSameNameRequire: true,
+  release: '/${project.static}/js/mods/$1',
+});
+
+fis.match('/node_modules/(**.{css,scss})', {
+  isMod: true,
+  useSameNameRequire: true,
+  release: '/${project.static}/style/mods/$1',
+});
+
 // test 目录直接产出出到 test 目录下
 fis.match('/test/**/*', {
-    release: '$0'
+  release: '$0'
 });
 
 //以_开头的文件不产出
@@ -64,15 +113,6 @@ fis.match('_*', {
 fis.unhook('components')
 fis.hook('node_modules')
 // 开启同名依赖
-fis.match('/common/widgets/**', {
-    useSameNameRequire: true
-});
-
-fis.match('/pages/**', {
-    useSameNameRequire: true
-});
-
-
 
 // ------ 全局配置
 // 允许你在 js 中直接 require css+文件
@@ -115,19 +155,28 @@ fis.match(/^\/(.*\.(scss|less|css))$/i, {
     })
 });
 
-
+// fis.match('*.{css, scss}', {
+//   postprocessor: fis.plugin('px2rem', {
+//     remUnit: 75,
+//     threeVersion: false,
+//     remVersion: true,
+//     baseDpr: 2,
+//     remPrecision: 6
+//   })
+// })
 
 // 配置js
-// fis.match(/^\/modules\/(.*\.es)$/i, {
-//     parser: fis.plugin('babel-5.x'),
-//     rExt: 'js',
-//     isMod: true,
-//     release: '${project.static}/$1'
-// });
-// fis.match(/^\/modules\/(.*\.js)$/i, {
-//     isMod: true,
-//     release: '${project.static}/$1'
-// });
+fis.match('/pages/**.{js, es}', {
+    parser: fis.plugin('babel-5.x'),
+    rExt: 'js',
+    isMod: true,
+});
+
+fis.match('/common/widgets/**.{js, es}', {
+  parser: fis.plugin('babel-5.x'),
+  rExt: 'js',
+  isMod: true,
+});
 
 
 // ------ 配置前端模版 使用template.js
@@ -160,11 +209,11 @@ fis.match('/test/server.conf', {
     release: '/config/server.conf'
 });
 
-
 /*************************打包规范*****************************/
 
 // 因为是纯前端项目，依赖不能自断被加载进来，所以这里需要借助一个 loader 来完成，
 // 注意：与后端结合的项目不需要此插件!!!
+
 fis.match('::package', {
     // npm install [-g] fis3-postpackager-loader
     // 分析 __RESOURCE_MAP__ 结构，来解决资源加载问题
@@ -173,6 +222,12 @@ fis.match('::package', {
         useInlineMap: true // 资源映射表内嵌
     })
 });
+fis.match('/lib/**.js', {
+  packTo: '/pkg.lib.js'
+})
+.match('/lib/**.css', {
+  packTo: '/pkg.lib.css'
+})
 
 // debug后缀 不会压缩
 var map = {
@@ -185,14 +240,16 @@ var map = {
         path: ''
     },
     'prod': {
-        host: 'http://yanhaijing.com',
-        path: '/${project.name}'
+        host: 'http://shop.zallds.com',
+        // path: '/${project.name}'
+        //path: '/'
     },
     'prod-debug': {
         host: '',
         path: ''
     }
 };
+
 
 // 通用 1.替换url前缀 2.添加mr5码 3.打包 4.合图 5.重新定义资源路径
 Object.keys(map).forEach(function(v) {
@@ -227,35 +284,41 @@ Object.keys(map).forEach(function(v) {
                 // allInOne: true,
             })
         })
+        /*打包分为3个层：
+         * 插件: /lib/**.js => lib.js   /lib/**.css => lib.css  /lib/**.jpg => common/lib/**.jpg
+         * 公共逻辑: /common/js/**.js => common.js  /common/css/**.css => common.css
+         * 公共组件：/common/widgets/**.js,css => widgets.js,css
+         * 页面单独逻辑js,css
+         *
+         * */
         .match('/lib/es5-{shim,sham}.js', {
-            packTo: '/pkg/es5-shim.js'
+          packTo: '/pkg.es5-shim.js'
         })
         .match('/common/**.{scss, css}', {
-            packTo: '/pkg/common.css'
+          packTo: '/pkg.common.css'
         })
         .match('/common/**.js', {
-            packTo: '/pkg/common.js'
+          packTo: '/pkg.common.js'
         })
         .match('/common/widgets/**.js', {
-            packTo: '/pkg/widgets.js'
+          packTo: '/pkg.widgets.js'
         })
         .match('/common/widgets/**.{scss, css}', {
-            packTo: '/pkg/widgets.css'
+          packTo: '/pkg.widgets.css'
         })
-
 });
 
 
-// 压缩css js html
+//不带debug模式 压缩css js html
 Object.keys(map)
     .filter(function(v) {
         return v.indexOf('debug') < 0
     })
     .forEach(function(v) {
         fis.media(v)
-            // .match('**.html', {
-            //     optimizer: fis.plugin('html-compress')
-            // })
+            .match('**.html', {
+                optimizer: fis.plugin('html-compress')
+            })
             .match('**.{es,js}', {
                 optimizer: fis.plugin('uglify-js')
             })
@@ -263,7 +326,7 @@ Object.keys(map)
                 optimizer: fis.plugin('clean-css', {
                     'keepBreaks': true //保持一个规则一个换行
                 })
-            });
+            })
     });
 
 // 本地产出发布
@@ -284,19 +347,42 @@ fis.media('prod')
 
 
 // 发布到指定的机器
-// ['rd', 'rd-debug'].forEach(function(v) {
-//     fis.media(v)
-//         .match('*', {
-//             deploy: [
-//                 fis.plugin('skip-packed', {
-//                     // 默认被打包了 js 和 css 以及被 css sprite 合并了的图片都会在这过滤掉，
-//                     // 但是如果这些文件满足下面的规则，则依然不过滤
-//                     ignore: []
-//                 }),
-//                 fis.plugin('http-push', {
-//                     receiver: 'xxx/fisreceiver.php',
-//                     to: 'xxx/' + fis.get('project.name')
-//                 })
-//             ]
-//         });
-// });
+['rd', 'rd-debug'].forEach(function(v) {
+    fis.media(v)
+        .match('*', {
+            // deploy: [
+            //     fis.plugin('skip-packed', {
+            //         // 默认被打包了 js 和 css 以及被 css sprite 合并了的图片都会在这过滤掉，
+            //         // 但是如果这些文件满足下面的规则，则依然不过滤
+            //         ignore: []
+            //     }),
+            //     // fis.plugin('http-push', {
+            //     //     receiver: '127.0.0.1:8080',
+            //     //     to: '/' + fis.get('project.name'),
+            //     // })
+            //     fis.plugin('ftp', {
+            //       console: true,
+            //       // cache: true,           // 是否开启上传列表缓存，开启后支持跳过未修改文件，默认：true
+            //       remoteDir: '/data/www/zallpay_html5_mall/',   // 远程文件目录，注意！！！设置错误将导致文件被覆盖
+            //       // remoteDir: '/data/www/zallpay_html5_mall/' + fis.get('project.name'),   // 远程文件目录，注意！！！设置错误将导致文件被覆盖
+            //       connect: {
+            //         host: '192.168.62.51',
+            //         port: '22',
+            //         user: 'zallds',
+            //         password: 'zAllds@123'
+            //       }
+            //     })
+            // ]
+            deploy: fis.plugin('sftp-client', {
+              // cache: true,           // 是否开启上传列表缓存，开启后支持跳过未修改文件，默认：true
+              // to: '/data/www/zallpay_html5_mall/',   // 远程文件目录，注意！！！设置错误将导致文件被覆盖
+              from: ['/'],
+              to: ['/data/www/zallpay_html5_mall/'],   // 远程文件目录，注意！！！设置错误将导致文件被覆盖
+              host: '192.168.62.51',
+              // port: '22',
+              username: 'zallds',
+              password: 'zAllds@123'
+            })
+
+        });
+});

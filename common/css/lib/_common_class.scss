@@ -1,0 +1,208 @@
+@charset "UTF-8";
+
+@import "../base/_fn";
+//布局类
+// 通用工具类
+
+.content-padding{
+  padding:px2rem($gap) px2rem($gapH);
+}
+
+.clearfix{
+  &:before,
+  &:after {
+    content: " ";
+    display: table;
+  }
+  &:after {
+    clear: both;
+  }
+}
+
+.hide{
+  display: none;
+}
+
+.por{
+  position: relative;
+}
+.poa{
+  position: absolute;
+}
+
+.center{
+  text-align: center;
+}
+
+
+
+.fl{
+  float:left !important;
+}
+
+.fr{
+  float:right !important;
+}
+
+
+// 字体颜色
+.primary{
+  color:$primary  !important;
+}
+
+.secondary{
+  color:$secondary !important;
+}
+
+
+.text-muted{
+  color:$color9;
+}
+
+// 背景色
+.white-bg{
+  background:white;
+}
+
+
+
+// 公共阴影
+.z-depth-0{
+  box-shadow: none !important;
+}
+
+.z-depth-1{
+  box-shadow: 0 2px 5px 0 rgba(0,0,0,0.16),0 2px 10px 0 rgba(0,0,0,0.12);
+}
+
+.z-depth-2{
+  box-shadow: 0 8px 17px 0 rgba(0,0,0,0.2),0 6px 20px 0 rgba(0,0,0,0.19);
+}
+
+.z-depth-3{
+  box-shadow: 0 12px 15px 0 rgba(0,0,0,0.24),0 17px 50px 0 rgba(0,0,0,0.19);
+}
+
+.z-depth-4{
+  box-shadow: 0 16px 28px 0 rgba(0,0,0,0.22),0 25px 55px 0 rgba(0,0,0,0.21);
+}
+
+.z-depth-5{
+  box-shadow: 0 27px 24px 0 rgba(0,0,0,0.2),0 40px 77px 0 rgba(0,0,0,0.22);
+}
+
+//公共弹窗
+.mint-msgbox{
+  width:75%;
+  border-radius: px2rem(10);
+
+  .mint-msgbox-header{
+    padding:px2rem(16) 0 px2rem(12);
+    background-color:#EEEEEE;
+  }
+
+  .mint-msgbox-content{
+    padding:px2rem(18) px2rem(23);
+    .mint-msgbox-message{
+      color:#333333;
+      line-height:px2rem(23);
+    }
+  }
+
+  .mint-msgbox-btns{
+    height:px2rem(40);
+    .mint-msgbox-btn{
+      font-size:px2rem(18);
+    }
+    .mint-msgbox-confirm{
+      color:$primary;
+    }
+  }
+}
+
+
+// 为了适配导航条
+.flex-page{
+  height:100%;
+  display: flex;
+  flex-direction:column;
+  align-items: center;
+  justify-content:center;
+
+  .flex-content{
+    width:100%;
+    flex:1;
+    overflow-y: auto;
+  }
+
+/*  .navigation{
+    padding-bottom:px2rem(45);
+  }*/
+}
+
+
+.small-money{
+  &::before{
+    margin-right:px2rem(3);
+    font-size:px2rem(13);
+    content:'¥';
+  }
+}
+
+
+
+
+// 公共的商品列表
+$itemPaddinglr: px2rem(10);
+.goods-list{
+  background:white;
+  .goods-item{
+    position: relative;
+    vertical-align: top;
+    display: inline-block;
+    box-sizing: border-box;
+    width:50%;
+    background:white;
+    text-align: center;
+    padding:$itemPaddinglr;
+    &::before{
+      @include setBottomLine();
+    }
+    .img-lazy{
+      width:100%;
+      height:px2rem(172);
+      text-align: center;
+    }
+
+
+
+    .goods-desc{
+      font-size:px2rem(14);
+      color:$color3;
+      letter-spacing:px2rem(0.75);
+      @include ellipsis();
+      @include line-height(px2rem(17));
+    }
+
+    .goods-price{
+      font-weight: bolder;
+      font-size:px2rem(16);
+      color:#B73034;
+      margin-top:px2rem(5);
+      @include ellipsis();
+    }
+
+  }
+
+  .goods-item:nth-child(2n-1){
+    padding-right:$itemPaddinglr/2;
+    &:after{
+      @include setRightLine();
+      right:0;
+      top:0;
+    }
+  }
+  .goods-item:nth-child(2n){
+    padding-left:$itemPaddinglr/2;
+  }
+}

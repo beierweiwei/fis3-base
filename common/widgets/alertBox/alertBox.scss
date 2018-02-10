@@ -1,0 +1,15 @@
+.rp-alert-box {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(50%, 50%);
+  .alert-box-wrap {
+    padding-left: 10px;
+    padding-right: 10px;
+  }
+  .alert-box-header {
+    line-height: 20px;
+
+  }
+
+}

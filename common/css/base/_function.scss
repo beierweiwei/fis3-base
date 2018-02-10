@@ -1,0 +1,5 @@
+@charset "UTF-8";
+// px转rem值  按照iphone6 375 dpr：2为标准  多以效果图上要除以2
+@function px2rem($px) {  // $px 参数为px值，不带单位
+  @return $px / 20 * 1rem;
+}

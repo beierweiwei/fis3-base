@@ -8,15 +8,9 @@
       <change type="DELETED" beforePath="$PROJECT_DIR$/mods/jquery.loading.min.css" afterPath="" />
       <change type="DELETED" beforePath="$PROJECT_DIR$/mods/jquery.loading.min.js" afterPath="" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/README.md" afterPath="$PROJECT_DIR$/README.md" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/common/widgets/scrollBtn/scrollBtn.scss" afterPath="$PROJECT_DIR$/common/widgets/scrollBtn/scrollBtn.scss" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/fis-conf.js" afterPath="$PROJECT_DIR$/fis-conf.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/package.json" afterPath="$PROJECT_DIR$/package.json" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/pages/home.js" afterPath="$PROJECT_DIR$/pages/home.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/pages/home.scss" afterPath="$PROJECT_DIR$/pages/home.scss" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/pages/index.html" afterPath="$PROJECT_DIR$/pages/index.html" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/pages/moco.js" afterPath="$PROJECT_DIR$/pages/moco.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/pages/user/user.html" afterPath="$PROJECT_DIR$/pages/user/user.html" />
       <change type="MOVED" beforePath="$PROJECT_DIR$/common/css/base/_fn.scss" afterPath="$PROJECT_DIR$/common/style/base/_fn.scss" />
       <change type="MOVED" beforePath="$PROJECT_DIR$/common/css/base/_function.scss" afterPath="$PROJECT_DIR$/common/style/base/_function.scss" />
       <change type="MOVED" beforePath="$PROJECT_DIR$/common/css/base/_mixin.scss" afterPath="$PROJECT_DIR$/common/style/base/_mixin.scss" />
@@ -487,12 +481,20 @@
       <workItem from="1518226992667" duration="3209000" />
       <workItem from="1518230230474" duration="2544000" />
       <workItem from="1518234163621" duration="782000" />
-      <workItem from="1518237014634" duration="77000" />
+      <workItem from="1518237014634" duration="146000" />
     </task>
+    <task id="LOCAL-00001" summary="修改一些配置">
+      <created>1518237122778</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1518237122778</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="170548000" />
+    <option name="totallyTimeSpent" value="170617000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="1912" y="-8" width="1936" height="1056" extended-state="0" />
@@ -541,6 +543,10 @@
   </component>
   <component name="VcsContentAnnotationSettings">
     <option name="myLimit" value="2678400000" />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="修改一些配置" />
+    <option name="LAST_COMMIT_MESSAGE" value="修改一些配置" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>

@@ -3,7 +3,6 @@
   <component name="ChangeListManager">
     <list default="true" id="064f1df7-399e-41a4-a8da-168c35e39e2a" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/README.md" afterPath="$PROJECT_DIR$/README.md" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
@@ -130,7 +129,7 @@
       <file leaf-file-name="README.md" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/README.md">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="320">
+            <state relative-caret-position="187">
               <caret line="67" column="66" lean-forward="false" selection-start-line="67" selection-start-column="66" selection-end-line="67" selection-end-column="66" />
               <folding />
             </state>
@@ -441,7 +440,7 @@
       <workItem from="1518230230474" duration="2544000" />
       <workItem from="1518234163621" duration="782000" />
       <workItem from="1518237014634" duration="201000" />
-      <workItem from="1519435972812" duration="2516000" />
+      <workItem from="1519435972812" duration="2524000" />
     </task>
     <task id="LOCAL-00001" summary="修改一些配置">
       <created>1518237122778</created>
@@ -478,11 +477,18 @@
       <option name="project" value="LOCAL" />
       <updated>1519438429291</updated>
     </task>
-    <option name="localTasksCounter" value="6" />
+    <task id="LOCAL-00006" summary="修改reademe">
+      <created>1519438513524</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1519438513524</updated>
+    </task>
+    <option name="localTasksCounter" value="7" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="173188000" />
+    <option name="totallyTimeSpent" value="173196000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="1912" y="-8" width="1936" height="1056" extended-state="0" />
@@ -847,7 +853,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/README.md">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="320">
+        <state relative-caret-position="187">
           <caret line="67" column="66" lean-forward="false" selection-start-line="67" selection-start-column="66" selection-end-line="67" selection-end-column="66" />
           <folding />
         </state>

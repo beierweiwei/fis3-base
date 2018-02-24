@@ -61,7 +61,7 @@ fis依赖node，了解node请看这里[nodejs.org](http://nodejs.org/)。
 项目目录
 
     ┌─mods #需要包装的模块化js库，注意这里js库都是没有经过模块化包装的js库，会通过fis3自动包装
-    ├─lib #页面常用的公共库，此文件夹的js和css在build阶段会被打包成单一文件，在开发阶段建议使用fis3内置[依赖声明](http://fis.baidu.com/fis3/docs/user-dev/require.html)语法
+    ├─lib #页面常用的公共库，此文件夹的js和css在build阶段会被打包成单一文件，在开发阶段建议使用fis3内置依赖声明语法
     ├─pages #项目html页面，采用同名依赖，同一文件夹下的html会自动引用同名的css、js文件
     ├─common
     │  ├─style #css工具库，build阶段会被打包成common.css
@@ -73,6 +73,9 @@ fis依赖node，了解node请看这里[nodejs.org](http://nodejs.org/)。
     │  ├─images
     │  └─util
     └─test
+
+说明：fis3内置[依赖声明](http://fis.baidu.com/fis3/docs/user-dev/require.html)语法
+
 构建后
 
     dest

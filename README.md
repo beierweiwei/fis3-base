@@ -71,7 +71,7 @@ fis依赖node，了解node请看这里[nodejs.org](http://nodejs.org/)。
     │  │   └─scrollBar
     │  ├─lib
     │  ├─images
-    │  └─util
+    │  └─js 其他js文件
     └─test
 
 说明：fis3内置[依赖声明](http://fis.baidu.com/fis3/docs/user-dev/require.html)语法

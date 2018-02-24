@@ -1,5 +1,4 @@
-
-  module.exports = {
+module.exports = {
      getReportDate(dateRange) {
        var start = Date.now();
        var end = 0;
@@ -49,5 +48,3 @@
        return Array.isArray(dataRange) ? (dataRange[1] - dataRange[0]) / 1000 / 60 / 60 / 24 : dataRange;
      }
    }
-
-

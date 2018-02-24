@@ -1,5 +1,5 @@
 $(".container").show();
-var echarts = require('/mods/echarts.min.js');
+var echarts = require('/mods/echarts.custom.js');
 var jeDate = require('/mods/jquery.jedate.js');
 var moco = require('./moco.js');
 require('/mods/jedate.css');

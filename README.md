@@ -35,9 +35,7 @@ fis依赖node，了解node请看这里[nodejs.org](http://nodejs.org/)。
     # deploy类
     npm install -g fis3-deploy-skip-packed
 
-更多插件可以看[fis3插件开发](http://fis.baidu.com/fis3/docs/api/dev-plugin.html)和[fis3常用插件列表
-
-](http://fis.baidu.com/fis3/docs/common-plugin.html)。
+更多插件可以看[fis3插件开发](http://fis.baidu.com/fis3/docs/api/dev-plugin.html)和[fis3常用插件列表](http://fis.baidu.com/fis3/docs/common-plugin.html)。
 
 第三步，接下来安装npm模块其他依赖模块
     npm install
@@ -49,7 +47,7 @@ fis依赖node，了解node请看这里[nodejs.org](http://nodejs.org/)。
 
 发布
 
-	fis3 release
+    fis3 release
 
 	fis3 release prod-debug # 本地查看发布产品库状态
     fis3 release prod # 发布产品库
@@ -61,27 +59,27 @@ fis依赖node，了解node请看这里[nodejs.org](http://nodejs.org/)。
 
 ## 目录说明
 项目目录
-┌─mods(需要包装的模块化js库，注意这里js库都是没有经过模块化包装的js库，会通过fis3自动包装)
-├─lib（页面常用的公共库，此文件夹的js和css在build阶段会被打包成单一文件，在开发阶段建议使用fis3内置[依赖声明](http://fis.baidu.com/fis3/docs/user-dev/require.html)语法）
-├─pages（项目html页面，采用同名依赖，同一文件夹下的html会自动引用同名的css、js文件）
-├─common
-│  ├─style(css工具库，build阶段会被打包成common.css)
-│  ├─widget(公共组件，此目录开启同名依赖，上线时会被打包成widget.js, widget.css ....)
-│  │   ├─header
-│  │   ├─footer
-│  │   └─scrollBar
-│  ├─lib
-│  ├─images
-│  └─util
-└─test
+    ┌─mods(需要包装的模块化js库，注意这里js库都是没有经过模块化包装的js库，会通过fis3自动包装)
+    ├─lib（页面常用的公共库，此文件夹的js和css在build阶段会被打包成单一文件，在开发阶段建议使用fis3内置[依赖声明](http://fis.baidu.com/fis3/docs/user-dev/require.html)语法）
+    ├─pages（项目html页面，采用同名依赖，同一文件夹下的html会自动引用同名的css、js文件）
+    ├─common
+    │  ├─style(css工具库，build阶段会被打包成common.css)
+    │  ├─widget(公共组件，此目录开启同名依赖，上线时会被打包成widget.js, widget.css ....)
+    │  │   ├─header
+    │  │   ├─footer
+    │  │   └─scrollBar
+    │  ├─lib
+    │  ├─images
+    │  └─util
+    └─test
 构建后
-dest
-├─static
-├─images
-├─css
-├─js
-├─test
-└─html
+    dest
+    ├─static
+    ├─images
+    ├─css
+    ├─js
+    ├─test
+    └─html
 
 
 

@@ -1,83 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="064f1df7-399e-41a4-a8da-168c35e39e2a" name="Default" comment="修改一些配置">
-      <change type="DELETED" beforePath="$PROJECT_DIR$/fis-conf.js.back" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/mods/echarts.min.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/mods/echarts.min.js.bk" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/mods/jquery.loading.min.css" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/mods/jquery.loading.min.js" afterPath="" />
+    <list default="true" id="064f1df7-399e-41a4-a8da-168c35e39e2a" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/README.md" afterPath="$PROJECT_DIR$/README.md" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/common/widgets/scrollBtn/scrollBtn.scss" afterPath="$PROJECT_DIR$/common/widgets/scrollBtn/scrollBtn.scss" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/pages/home.js" afterPath="$PROJECT_DIR$/pages/home.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/pages/moco.js" afterPath="$PROJECT_DIR$/pages/moco.js" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/common/css/base/_fn.scss" afterPath="$PROJECT_DIR$/common/style/base/_fn.scss" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/common/css/base/_function.scss" afterPath="$PROJECT_DIR$/common/style/base/_function.scss" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/common/css/base/_mixin.scss" afterPath="$PROJECT_DIR$/common/style/base/_mixin.scss" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/common/css/base/_variables.scss" afterPath="$PROJECT_DIR$/common/style/base/_variables.scss" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/common/css/icon/demo.css" afterPath="$PROJECT_DIR$/common/style/icon/demo.css" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/common/css/icon/demo_fontclass.html" afterPath="$PROJECT_DIR$/common/style/icon/demo_fontclass.html" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/common/css/icon/demo_symbol.html" afterPath="$PROJECT_DIR$/common/style/icon/demo_symbol.html" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/common/css/icon/demo_unicode.html" afterPath="$PROJECT_DIR$/common/style/icon/demo_unicode.html" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/common/css/icon/iconfont.css" afterPath="$PROJECT_DIR$/common/style/icon/iconfont.css" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/common/css/icon/iconfont.eot" afterPath="$PROJECT_DIR$/common/style/icon/iconfont.eot" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/common/css/icon/iconfont.js" afterPath="$PROJECT_DIR$/common/style/icon/iconfont.js" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/common/css/icon/iconfont.svg" afterPath="$PROJECT_DIR$/common/style/icon/iconfont.svg" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/common/css/icon/iconfont.ttf" afterPath="$PROJECT_DIR$/common/style/icon/iconfont.ttf" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/common/css/icon/iconfont.woff" afterPath="$PROJECT_DIR$/common/style/icon/iconfont.woff" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/common/css/index.scss" afterPath="$PROJECT_DIR$/common/style/index.scss" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/common/css/lib/_common_class.scss" afterPath="$PROJECT_DIR$/common/style/lib/_common_class.scss" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/common/css/lib/_rem.scss" afterPath="$PROJECT_DIR$/common/style/lib/_rem.scss" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/common/css/lib/_reset.scss" afterPath="$PROJECT_DIR$/common/style/lib/_reset.scss" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/common/css/lib/_resetLayer.scss" afterPath="$PROJECT_DIR$/common/style/lib/_resetLayer.scss" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/common/css/lib/_resetPure.scss" afterPath="$PROJECT_DIR$/common/style/lib/_resetPure.scss" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/common/css/lib/loading/loading.scss" afterPath="$PROJECT_DIR$/common/style/lib/loading/loading.scss" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/common/css/lib/pure/HISTORY.md" afterPath="$PROJECT_DIR$/common/style/lib/pure/HISTORY.md" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/common/css/lib/pure/LICENSE.md" afterPath="$PROJECT_DIR$/common/style/lib/pure/LICENSE.md" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/common/css/lib/pure/README.md" afterPath="$PROJECT_DIR$/common/style/lib/pure/README.md" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/common/css/lib/pure/base-context-min.css" afterPath="$PROJECT_DIR$/common/style/lib/pure/base-context-min.css" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/common/css/lib/pure/base-context.css" afterPath="$PROJECT_DIR$/common/style/lib/pure/base-context.css" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/common/css/lib/pure/base-min.css" afterPath="$PROJECT_DIR$/common/style/lib/pure/base-min.css" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/common/css/lib/pure/base.css" afterPath="$PROJECT_DIR$/common/style/lib/pure/base.css" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/common/css/lib/pure/bower.json" afterPath="$PROJECT_DIR$/common/style/lib/pure/bower.json" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/common/css/lib/pure/buttons-core-min.css" afterPath="$PROJECT_DIR$/common/style/lib/pure/buttons-core-min.css" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/common/css/lib/pure/buttons-core.css" afterPath="$PROJECT_DIR$/common/style/lib/pure/buttons-core.css" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/common/css/lib/pure/buttons-min.css" afterPath="$PROJECT_DIR$/common/style/lib/pure/buttons-min.css" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/common/css/lib/pure/buttons.css" afterPath="$PROJECT_DIR$/common/style/lib/pure/buttons.css" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/common/css/lib/pure/forms-min.css" afterPath="$PROJECT_DIR$/common/style/lib/pure/forms-min.css" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/common/css/lib/pure/forms-nr-min.css" afterPath="$PROJECT_DIR$/common/style/lib/pure/forms-nr-min.css" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/common/css/lib/pure/forms-nr.css" afterPath="$PROJECT_DIR$/common/style/lib/pure/forms-nr.css" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/common/css/lib/pure/forms.css" afterPath="$PROJECT_DIR$/common/style/lib/pure/forms.css" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/common/css/lib/pure/grids-core-min.css" afterPath="$PROJECT_DIR$/common/style/lib/pure/grids-core-min.css" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/common/css/lib/pure/grids-core.css" afterPath="$PROJECT_DIR$/common/style/lib/pure/grids-core.css" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/common/css/lib/pure/grids-min.css" afterPath="$PROJECT_DIR$/common/style/lib/pure/grids-min.css" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/common/css/lib/pure/grids-responsive-min.css" afterPath="$PROJECT_DIR$/common/style/lib/pure/grids-responsive-min.css" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/common/css/lib/pure/grids-responsive-old-ie-min.css" afterPath="$PROJECT_DIR$/common/style/lib/pure/grids-responsive-old-ie-min.css" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/common/css/lib/pure/grids-responsive-old-ie.css" afterPath="$PROJECT_DIR$/common/style/lib/pure/grids-responsive-old-ie.css" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/common/css/lib/pure/grids-responsive.css" afterPath="$PROJECT_DIR$/common/style/lib/pure/grids-responsive.css" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/common/css/lib/pure/grids-units-min.css" afterPath="$PROJECT_DIR$/common/style/lib/pure/grids-units-min.css" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/common/css/lib/pure/grids-units.css" afterPath="$PROJECT_DIR$/common/style/lib/pure/grids-units.css" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/common/css/lib/pure/grids.css" afterPath="$PROJECT_DIR$/common/style/lib/pure/grids.css" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/common/css/lib/pure/menus-core-min.css" afterPath="$PROJECT_DIR$/common/style/lib/pure/menus-core-min.css" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/common/css/lib/pure/menus-core.css" afterPath="$PROJECT_DIR$/common/style/lib/pure/menus-core.css" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/common/css/lib/pure/menus-dropdown-min.css" afterPath="$PROJECT_DIR$/common/style/lib/pure/menus-dropdown-min.css" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/common/css/lib/pure/menus-dropdown.css" afterPath="$PROJECT_DIR$/common/style/lib/pure/menus-dropdown.css" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/common/css/lib/pure/menus-horizontal-min.css" afterPath="$PROJECT_DIR$/common/style/lib/pure/menus-horizontal-min.css" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/common/css/lib/pure/menus-horizontal.css" afterPath="$PROJECT_DIR$/common/style/lib/pure/menus-horizontal.css" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/common/css/lib/pure/menus-min.css" afterPath="$PROJECT_DIR$/common/style/lib/pure/menus-min.css" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/common/css/lib/pure/menus-scrollable-min.css" afterPath="$PROJECT_DIR$/common/style/lib/pure/menus-scrollable-min.css" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/common/css/lib/pure/menus-scrollable.css" afterPath="$PROJECT_DIR$/common/style/lib/pure/menus-scrollable.css" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/common/css/lib/pure/menus-skin-min.css" afterPath="$PROJECT_DIR$/common/style/lib/pure/menus-skin-min.css" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/common/css/lib/pure/menus-skin.css" afterPath="$PROJECT_DIR$/common/style/lib/pure/menus-skin.css" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/common/css/lib/pure/menus.css" afterPath="$PROJECT_DIR$/common/style/lib/pure/menus.css" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/common/css/lib/pure/pure-min.css" afterPath="$PROJECT_DIR$/common/style/lib/pure/pure-min.css" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/common/css/lib/pure/pure-nr-min.css" afterPath="$PROJECT_DIR$/common/style/lib/pure/pure-nr-min.css" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/common/css/lib/pure/pure-nr.css" afterPath="$PROJECT_DIR$/common/style/lib/pure/pure-nr.css" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/common/css/lib/pure/pure.css" afterPath="$PROJECT_DIR$/common/style/lib/pure/pure.css" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/common/css/lib/pure/tables-min.css" afterPath="$PROJECT_DIR$/common/style/lib/pure/tables-min.css" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/common/css/lib/pure/tables.css" afterPath="$PROJECT_DIR$/common/style/lib/pure/tables.css" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/common/css/util.scss" afterPath="$PROJECT_DIR$/common/style/util.scss" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
@@ -204,8 +130,8 @@
       <file leaf-file-name="README.md" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/README.md">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="60">
-              <caret line="24" column="0" lean-forward="true" selection-start-line="24" selection-start-column="0" selection-end-line="24" selection-end-column="0" />
+            <state relative-caret-position="800">
+              <caret line="79" column="8" lean-forward="true" selection-start-line="79" selection-start-column="8" selection-end-line="79" selection-end-column="8" />
               <folding />
             </state>
           </provider>
@@ -515,7 +441,7 @@
       <workItem from="1518230230474" duration="2544000" />
       <workItem from="1518234163621" duration="782000" />
       <workItem from="1518237014634" duration="201000" />
-      <workItem from="1519435972812" duration="2117000" />
+      <workItem from="1519435972812" duration="2363000" />
     </task>
     <task id="LOCAL-00001" summary="修改一些配置">
       <created>1518237122778</created>
@@ -531,11 +457,18 @@
       <option name="project" value="LOCAL" />
       <updated>1518237164711</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00003" summary="修改reademe">
+      <created>1519438148913</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1519438148913</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="172789000" />
+    <option name="totallyTimeSpent" value="173035000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="1912" y="-8" width="1936" height="1056" extended-state="0" />
@@ -587,7 +520,8 @@
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="修改一些配置" />
-    <option name="LAST_COMMIT_MESSAGE" value="修改一些配置" />
+    <MESSAGE value="修改reademe" />
+    <option name="LAST_COMMIT_MESSAGE" value="修改reademe" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -899,8 +833,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/README.md">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="60">
-          <caret line="24" column="0" lean-forward="true" selection-start-line="24" selection-start-column="0" selection-end-line="24" selection-end-column="0" />
+        <state relative-caret-position="800">
+          <caret line="79" column="8" lean-forward="true" selection-start-line="79" selection-start-column="8" selection-end-line="79" selection-end-column="8" />
           <folding />
         </state>
       </provider>

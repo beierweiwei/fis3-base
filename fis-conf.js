@@ -1,7 +1,7 @@
 // 设置项目属性
 fis.set('project.name', 'reportcharts');
 fis.set('project.static', '/static');
-fis.set('project.files', ['*.html', 'map.json', '/test/*', '/lib/**']);
+fis.set('project.files', ['*.html', 'map.json', '/test/*', '/lib/**','/mock/*']);
 
 // 引入模块化开发插件，设置规范为 commonJs 规范。
 fis.hook('commonjs', {
@@ -195,12 +195,12 @@ fis.match('/common/widgets/**.{js, es}', {
 
 
 // ------ 配置模拟数据
-fis.match('/test/**', {
+fis.match('/mock/**', {
     release: '$0'
 });
-fis.match('/test/server.conf', {
-    release: '/config/server.conf'
-});
+// fis.match('/test/server.conf', {
+//     release: '/config/server.conf'
+// });
 
 /*************************打包规范*****************************/
 

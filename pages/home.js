@@ -1,7 +1,5 @@
 $(".container").show();
 var echarts = require('/mods/echarts.custom.js');
-var jeDate = require('/mods/jquery.jedate.js');
-var moco = require('./moco.js');
 require('/mods/jedate.css');
 let myChart = null;
 let zoomSize = 8;
@@ -182,30 +180,26 @@ function getAndValidateDateRange(dateRange) {
 function getRportData(token, dateRange) {
   layer.open({type: 2})
   //eroor 处理 hideLoading, 弹框;
-  var dates = moco.getReportDate(dateRange);
-  var orderMoney = moco.getReportOrderMoney(dateRange);
-  var orderCout = moco.getReportOrderCout(dateRange);
+  $.get('/api/getReportsData', {dateRange: JSON.stringify(dateRange)}, function (res) {
+    res = JSON.parse(res).data;
+    var dates = res.dates;
+    var orderMoney =res.money;
+    var orderCout = res.count;
 
-  myChart.off('click');
-  myChart.on('click', function(params) {
-    myChart.dispatchAction({
-      type: 'dataZoom',
-      startValue: dates[Math.max(params.dataIndex - zoomSize / 2, 0)],
-      endValue:   dates[Math.min(params.dataIndex + zoomSize / 2, dates.length - 1)]
-    });
-  })
+    myChart.off('click');
+    myChart.on('click', function(params) {
+      myChart.dispatchAction({
+        type: 'dataZoom',
+        startValue: dates[Math.max(params.dataIndex - zoomSize / 2, 0)],
+        endValue:   dates[Math.min(params.dataIndex + zoomSize / 2, dates.length - 1)]
+      });
+    })
 
-  setTimeout(function () {
-    var datas = [
-      orderCout,
-      orderMoney,
-      dates
-    ];
-    onReportCartClick(datas);
+    onReportCartClick(res);
     //默认生成订单数
     $('.count-card').eq(0).click();
-    renderTabel(datas);
-  }, 500)
+    renderTabel(res);
+  });
 }
 function onReportCartClick(datas) {
   $('.count-card').each(function (idx, node) {
@@ -214,7 +208,7 @@ function onReportCartClick(datas) {
     })
   })
 }
-function changeCharts(idx, datas) {
+function changeCharts(idx, {count, money, dates}) {
   layer.closeAll();
   if(idx === 1) {
     //订单总笔数
@@ -226,12 +220,12 @@ function changeCharts(idx, datas) {
         }
       },
       xAxis: {
-        data: datas[2],
+        data: dates,
       },
       series: [{
         name: '销量',
         type: 'bar',
-        data: datas[0],
+        data: count,
         itemStyle: {
           color: '#FF6655'
         }
@@ -248,12 +242,12 @@ function changeCharts(idx, datas) {
         }
       },
       xAxis: {
-        data: datas[2],
+        data: dates,
       },
       series: [{
         name: '金额',
         type: 'bar',
-        data: datas[1],
+        data: money,
         itemStyle: {
           color: '#FF9F47',
         }
@@ -269,20 +263,20 @@ function changeCharts(idx, datas) {
 function initTabel() {
   $('.report-table-wrap').height(document.documentElement.clientHeight -30);
 }
-function renderTabel(datas) {
+function renderTabel({dates, money, count}) {
   var tableTpl = '<tr><td>{{date}}</td><td>{{orderCount}}</td> <td>{{money}}</td></tr>';
   var tableString = '';
-  datas[2].forEach(function (item, i) {
+  dates.forEach(function (item, i) {
     tableString += tableTpl.replace(/{{.*?}}/g,function (rp) {
       switch(rp) {
         case '{{date}}':
           return item;
           break;
         case '{{orderCount}}':
-          return datas[0][i];
+          return count[i];
           break;
         case '{{money}}':
-          return datas[1][i];
+          return money[i];
           break;
         default:
           return '';

@@ -78,13 +78,13 @@ fis依赖node，了解node请看这里[nodejs.org](http://nodejs.org/)。
 
 构建后
 
-    dest
-    ├─static
-    ├─images
-    ├─css
-    ├─js
-    ├─test
-    └─html
+    ┌─static
+    │  ├─static
+    │  ├─images
+    │  ├─css
+    │  ├─js
+    │  └─test
+    └─home.html
 
 
 
